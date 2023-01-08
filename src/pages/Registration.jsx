@@ -52,7 +52,7 @@ const Registration = () => {
         const data= new FormData(e.target)
         let recievedData=Object.fromEntries(data.entries());
         recievedData.projid="NA";
-        axios.post('https://dnyindia.in/api/user/register/', recievedData, {
+        axios.post('https://tilapi.pocsofclients.com/api/user/register/', recievedData, {
         headers: { 'Content-type': 'application/json; charset=UTF-8' }
         }).then((data) => {
             navigate('/pocsof/clients/t1lregistration/thankyou');
@@ -70,10 +70,10 @@ const Registration = () => {
 
     }
   return (
-    <div className="m-0 md:m-0 mt-0 p-0 w-screen h-screen md:p-0 bg-hero-water">
-        <div className='h-1/6 w-full bg-no-repeat bg-cover bg-center bg-hero-pattern'/>
+    <div className="relative m-0 md:m-0 mt-0 p-0 w-screen h-screen md:p-0 bg-hero-water">
+        <div className='h-1/6 w-full lg:w-2/4 bg-no-repeat  bg-cover justify-center lg:ml-80 lg:mr-80 bg-center bg-hero-pattern'/>
         <Header category="Page" title="Employees Registration" />
-        <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  ml-2 mr-2'>
+        <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 lg:ml-80 lg:mr-80 lg:mb-20 ml-4 mr-4'>
             <form onSubmit={handleSubmit} className=" mt-10">
             <InputSelect name="empBranch" placeholder="Cost Center"></InputSelect>
                 {
